@@ -22,8 +22,7 @@ namespace ImprovedTales.Patches
         {
             public static void Postfix(GearItem __instance)
             {
-
-                if (GameManager.m_ActiveScene.ToLowerInvariant().Contains("menu")) return;
+                if (GameManager.m_ActiveScene == null || GameManager.m_ActiveScene.ToLowerInvariant().Contains("menu")) return;
 
                 if (__instance.name.Contains("GEAR_HandheldShortwave") || __instance.name.ToLowerInvariant().Contains("signalvoid") && !__instance.m_InPlayerInventory)
                 {
